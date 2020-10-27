@@ -10,6 +10,8 @@
     <string name="categoria_quesos">Quesos</string>
     <string name="categoria_yogurt">Yogurt</string>
     <string name="titulo_productos">Mis productos</string>
+    <string name="titulo_recomendado_del_dia">Recomendado del día</string>
+    <string name="recomendado_Yogurt">Yogurt Griego</string>
 
 
 </resources>

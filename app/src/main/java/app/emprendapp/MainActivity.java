@@ -1,23 +1,30 @@
 package app.emprendapp;
 
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import app.emprendapp.ui.categorias.PostresFragment;
+
+public class MainActivity extends AppCompatActivity  {
+
+    PostresFragment fragPostres;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
+        BottomNavigationView navView = findViewById(R.id.nav_menu);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -28,4 +35,18 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
     }
 
+
+    public void onClickPostres(View view) {
+        fragPostres = new PostresFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        switch (view.getId()){
+            case R.id.cardPostres:
+                transaction = getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,  fragPostres);
+            break;
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + view.getId());
+        }transaction.commit();
+    }
 }
