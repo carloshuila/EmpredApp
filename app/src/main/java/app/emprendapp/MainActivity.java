@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity  {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_orders, R.id.navigation_profile)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavController navController = Navigation.findNavController(this, R.id.navBusqueda);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
     }
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity  {
 
         switch (view.getId()){
             case R.id.cardPostres:
-                transaction = getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,  fragPostres);
+                transaction = getSupportFragmentManager().beginTransaction().replace(R.id.navBusqueda,  fragPostres);
             break;
 
             default:

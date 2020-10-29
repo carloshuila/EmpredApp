@@ -1,18 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EmpredApp</string>
     <string name="title_home">Inicio</string>
-    <string name="title_orders">Mis Pedidos</string>
-    <string name="title_profile">Perfil</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello carlos</string>
     <string name="categoria_postres">Postres</string>
     <string name="categoria_kumis">Kumis</string>
     <string name="categoria_quesos">Quesos</string>
     <string name="categoria_yogurt">Yogurt</string>
     <string name="titulo_productos">Nuestros productos</string>
     <string name="titulo_recomendado_del_dia">Recomendado del día</string>
+    <string name="title_orders">Mis pedidos</string>
+    <string name="title_profile">Perfil</string>
     <string name="recomendado_Yogurt">Yogurt Griego</string>
+    <string name="hello_blank_fragment">Hola Carlos</string>
     <string name="descripcion_recomendado_dia">Descripción:</string>
-
-
 </resources>
