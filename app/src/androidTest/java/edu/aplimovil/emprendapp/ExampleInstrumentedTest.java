@@ -1,4 +1,4 @@
-package app.emprendapp;
+package edu.aplimovil.emprendapp;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("app.empredapp", appContext.getPackageName());
+        assertEquals("edu.aplimovil.emprendapp", appContext.getPackageName());
     }
 }

@@ -1,4 +1,4 @@
-package app.emprendapp;
+package edu.aplimovil.emprendapp;
 
 import org.junit.Test;
 
