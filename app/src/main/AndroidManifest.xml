@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".categorias.PostreActivity"></activity>
-        <activity android:name=".categorias.CategoriaPostreActivity" />
+        <activity android:name=".categorias.postres.PostreActivity"></activity>
+        <activity android:name=".categorias.postres.CategoriaPostreActivity" />
         <activity android:name=".PerfilActivity" />
         <activity android:name=".PedidosActivity" />
         <activity android:name=".MainActivity">

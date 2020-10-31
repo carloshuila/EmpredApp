@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.categorias;
+package edu.aplimovil.emprendapp.categorias.postres;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,13 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
 
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
-
-import static edu.aplimovil.emprendapp.categorias.AdapterPostres.*;
 
 public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHolder> {
 

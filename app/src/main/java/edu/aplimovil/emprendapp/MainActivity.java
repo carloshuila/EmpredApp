@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import edu.aplimovil.emprendapp.categorias.CategoriaPostreActivity;
+import edu.aplimovil.emprendapp.categorias.postres.CategoriaPostreActivity;
 
 public class MainActivity extends AppCompatActivity {
 
