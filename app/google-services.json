@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "594172628787",
+    "firebase_url": "https://emprendapp-dc71c.firebaseio.com",
+    "project_id": "emprendapp-dc71c",
+    "storage_bucket": "emprendapp-dc71c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594172628787:android:fefbe46f1006c82c3d7846",
+        "android_client_info": {
+          "package_name": "edu.aplimovil.emprendapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594172628787-o3ho9npk1o2iab8658lh9rm32luduumr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.aplimovil.emprendapp",
+            "certificate_hash": "38c82a94ccbc8686827740a6f9738dce4613f92b"
+          }
+        },
+        {
+          "client_id": "594172628787-pi0244r3rn637l493arhcf3vr1g3gbgu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG4inWGPlbhKZo2tXe8b78tpdDK_UNlFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594172628787-pi0244r3rn637l493arhcf3vr1g3gbgu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

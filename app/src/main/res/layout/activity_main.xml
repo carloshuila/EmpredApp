@@ -60,25 +60,31 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutCategorias"
+        android:id="@+id/contLayoutPedidos"
         android:layout_width="0dp"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
+        <Button
+            android:id="@+id/id_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="vercategorias"
+            android:text="Button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutRecomendado"
         android:layout_width="0dp"
-        android:layout_height="245dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutCategorias">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -86,15 +92,19 @@
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado"
+        app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btnBarraNav"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:itemTextColor="#7986CB"
+            app:labelVisibilityMode="auto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

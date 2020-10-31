@@ -10,6 +10,13 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
 
+import android.view.View;
+
+import edu.aplimovil.emprendapp.categorias.postres.CategoriaPostreActivity;
+
+import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -17,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView navBar = (BottomNavigationView) findViewById(R.id.btnBarraNav);
+        BottomNavigationView navBar = findViewById(btnBarraNav);
 
         navBar.setSelectedItemId(R.id.MainActivity);
 
@@ -39,5 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void vercategorias(View view) {
+        Intent intent = new Intent(this, CategoriaPostreActivity.class);
+        startActivity(intent);
     }
 }

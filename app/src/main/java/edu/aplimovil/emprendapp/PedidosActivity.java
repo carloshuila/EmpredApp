@@ -16,7 +16,7 @@ public class PedidosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
 
-        BottomNavigationView navBar = (BottomNavigationView) findViewById(R.id.btnBarraNav);
+        BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         navBar.setSelectedItemId(R.id.PedidosActivity);
 
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
