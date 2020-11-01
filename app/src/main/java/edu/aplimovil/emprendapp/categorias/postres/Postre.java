@@ -1,18 +1,18 @@
 package edu.aplimovil.emprendapp.categorias.postres;
 
 public class Postre {
-    private String id;
+    private int id;
     private String nombre;
     private String categoria;
     private String sabor;
     private String descripcion;
-    private String precio;
-    private int imagen;
+    private int precio;
+    private String imagen;
 
     public Postre() {
     }
 
-    public Postre(String id, String nombre, String categoria, String sabor, String descripcion, String precio, int imagen) {
+    public Postre(int id, String nombre, String categoria, String sabor, String descripcion, int precio, String imagen ) {
         this.id = id;
         this.nombre = nombre;
         this.categoria = categoria;
@@ -22,7 +22,7 @@ public class Postre {
         this.imagen = imagen;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -42,15 +42,15 @@ public class Postre {
         this.descripcion = descripcion;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
-    public void setImagen(int imagen) {
+    public void setImagen(String  imagen) {
         this.imagen = imagen;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -70,11 +70,11 @@ public class Postre {
         return descripcion;
     }
 
-    public String getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public int getImagen() {
+    public String  getImagen() {
         return imagen;
     }
 }

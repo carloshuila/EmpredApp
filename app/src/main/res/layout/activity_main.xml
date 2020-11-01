@@ -58,11 +58,11 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/btnFiltros" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--- caja categorias-->
+    <LinearLayout
         android:id="@+id/contLayoutPedidos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:onClick="vercategorias"
             android:text="Button" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutRecomendado"
@@ -88,6 +88,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--- menu inferior -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"

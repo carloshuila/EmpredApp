@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
@@ -39,7 +41,8 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
         public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
             holder.nombrePostre.setText((listapostres.get(position).getNombre()));
-            holder.imgPostre.setImageResource(listapostres.get(position).getImagen());
+            Glide.with(micontext).load(listapostres.get(position).getImagen()).into(holder.imgPostre);
+
             //Agregar click Listener
             holder.cardViewPostre.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -48,6 +51,7 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
                     Intent intent = new Intent(micontext, PostreActivity.class);
 
                     // Pasamos datos a la PostreActicity
+                    intent.putExtra("Id", listapostres.get(position).getId());
                     intent.putExtra("Nombre", listapostres.get(position).getNombre());
                     intent.putExtra("Descripcion", listapostres.get(position).getDescripcion());
                     intent.putExtra("Precio", listapostres.get(position).getPrecio());

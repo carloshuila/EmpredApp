@@ -2,10 +2,13 @@ package edu.aplimovil.emprendapp.categorias.postres;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import edu.aplimovil.emprendapp.R;
 
@@ -13,6 +16,8 @@ public class PostreActivity extends AppCompatActivity {
 
     private TextView tvNombre, tvDescripcion,tvPrecio;
     private ImageView ivImagen;
+    private Context micontext;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +31,20 @@ public class PostreActivity extends AppCompatActivity {
 
         //Recibir datos
         Intent intent = getIntent();
+        String id = intent.getExtras().getString("Id");
         String nombre = intent.getExtras().getString("Nombre");
         String descripcion = intent.getExtras().getString("Descripcion");
         String precio = intent.getExtras().getString("Precio");
-        int imagen = intent.getExtras().getInt("Imagen");
+        String imagen = intent.getExtras().getString("Imagen");
+
+
 
         //Modificams los valores
         tvNombre.setText(nombre);
         tvDescripcion.setText(descripcion);
         tvPrecio.setText(precio);
-        ivImagen.setImageResource(imagen);
+
+        Glide.with(this).load(imagen).into(ivImagen);
+
     }
 }
