@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.categorias.postres;
+package edu.aplimovil.emprendapp.postres;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide;
 
 import edu.aplimovil.emprendapp.R;
 
-public class PostreActivity extends AppCompatActivity {
+public class PostreConectActivity extends AppCompatActivity {
 
     private TextView tvNombre, tvDescripcion,tvPrecio;
     private ImageView ivImagen;

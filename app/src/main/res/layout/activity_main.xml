@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".menu.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutSuperior"
@@ -58,33 +58,38 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/btnFiltros" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <!--- caja categorias-->
     <LinearLayout
         android:id="@+id/contLayoutPedidos"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="200dp"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
-        <Button
-            android:id="@+id/id_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="vercategorias"
-            android:text="Button" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recyclerView_Categorias"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:orientation="horizontal">
+        </androidx.recyclerview.widget.RecyclerView>
+
+
     </LinearLayout>
 
+    <!--- Producto recomendado -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutRecomendado"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

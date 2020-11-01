@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.categorias.postres;
+package edu.aplimovil.emprendapp.postres;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,15 +14,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
 
-public class CategoriaPostreActivity extends AppCompatActivity {
+public class PostreActivity extends AppCompatActivity {
 
-     List<Postre> listaPostres = new ArrayList<>();
+    List<Postre> listaPostres = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override

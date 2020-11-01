@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.categorias.postres;
+package edu.aplimovil.emprendapp.postres;
 
 public class Postre {
     private int id;

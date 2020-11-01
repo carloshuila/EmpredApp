@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.categorias.postres;
+package edu.aplimovil.emprendapp.postres;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,7 +48,7 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(micontext, PostreActivity.class);
+                    Intent intent = new Intent(micontext, PostreConectActivity.class);
 
                     // Pasamos datos a la PostreActicity
                     intent.putExtra("Id", listapostres.get(position).getId());
