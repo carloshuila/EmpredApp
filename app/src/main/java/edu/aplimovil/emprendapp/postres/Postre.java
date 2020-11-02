@@ -1,6 +1,8 @@
 package edu.aplimovil.emprendapp.postres;
 
-public class Postre {
+import java.io.Serializable;
+
+public class Postre implements Serializable {
     private int id;
     private String nombre;
     private String categoria;

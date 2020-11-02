@@ -27,7 +27,7 @@ public class PostreActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria_postre);
+        setContentView(R.layout.activity_list_postres);
 
         db.collection("postres")
                 .get()

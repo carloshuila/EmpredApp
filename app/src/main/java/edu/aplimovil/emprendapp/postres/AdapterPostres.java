@@ -2,6 +2,7 @@ package edu.aplimovil.emprendapp.postres;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,19 +44,19 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
             holder.nombrePostre.setText((listapostres.get(position).getNombre()));
             Glide.with(micontext).load(listapostres.get(position).getImagen()).into(holder.imgPostre);
 
+            final Postre postre = listapostres.get(position);
+
             //Agregar click Listener
             holder.cardViewPostre.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Intent intent = new Intent(micontext, PostreConectActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("Postre", postre);
 
-                    // Pasamos datos a la PostreActicity
-                    intent.putExtra("Id", listapostres.get(position).getId());
-                    intent.putExtra("Nombre", listapostres.get(position).getNombre());
-                    intent.putExtra("Descripcion", listapostres.get(position).getDescripcion());
-                    intent.putExtra("Precio", listapostres.get(position).getPrecio());
-                    intent.putExtra("Imagen", listapostres.get(position).getImagen());
+                    //pasamos el objeto a la activity
+                    intent.putExtras(bundle);
 
                     //Iniciamos la Activity
                     micontext.startActivity(intent);

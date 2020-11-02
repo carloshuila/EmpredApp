@@ -30,21 +30,23 @@ public class PostreConectActivity extends AppCompatActivity {
         ivImagen = (ImageView) findViewById(R.id.id_imagen_postre_Act);
 
         //Recibir datos
-        Intent intent = getIntent();
-        String id = intent.getExtras().getString("Id");
-        String nombre = intent.getExtras().getString("Nombre");
-        String descripcion = intent.getExtras().getString("Descripcion");
-        String precio = intent.getExtras().getString("Precio");
-        String imagen = intent.getExtras().getString("Imagen");
+        Bundle postreEnviado = getIntent().getExtras();
+        Postre postre = null;
+        if (postreEnviado != null){
+            postre = (Postre) postreEnviado.getSerializable("Postre");
 
 
 
-        //Modificams los valores
-        tvNombre.setText(nombre);
-        tvDescripcion.setText(descripcion);
-        tvPrecio.setText(precio);
+            //Pasa los valores para mostrar
+            tvNombre.setText(postre.getNombre().toString());
+            tvDescripcion.setText(postre.getDescripcion().toString());
+            tvPrecio.setText(String.valueOf(postre.getPrecio()));
 
-        Glide.with(this).load(imagen).into(ivImagen);
+            Glide.with(this).load(postre.getImagen()).into(ivImagen);
+
+
+        }
+
 
     }
 }
