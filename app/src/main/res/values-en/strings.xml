@@ -9,4 +9,10 @@
     <string name="NuestrosProductos">Our products</string>
     <string name="RecomendadoDia">Recommended of the day</string>
     <string name="btn_comprar">ADD TO CART</string>
+    <string name="Bienvenido">Welcome to</string>
+    <string name="btn_pagar">CONTINUE TO PAYMENT</string>
+    <string name="btn_InicioSesion">Log in</string>
+    <string name="correo">email</string>
+    <string name="Contraseña">Password</string>
+    <string name="MarLeches">Mar de leches</string>
 </resources>

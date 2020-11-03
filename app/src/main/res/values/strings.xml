@@ -10,5 +10,10 @@
     <string name="Guardar">Guardar</string>
     <string name="NuestrosProductos">Nuestros productos</string>
     <string name="RecomendadoDia">Recomendado del dia</string>
+    <string name="Bienvenido">Bienvenido a</string>
+    <string name="btn_InicioSesion">Iniciar sesión</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="Contraseña">Contraseña</string>
+    <string name="MarLeches">Mar de leches</string>
 
 </resources>
