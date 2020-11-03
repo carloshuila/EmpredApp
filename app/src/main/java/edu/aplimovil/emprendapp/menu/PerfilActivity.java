@@ -20,6 +20,8 @@ public class PerfilActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+
+        //Barra navegacion
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         navBar.setSelectedItemId(R.id.PedidosActivity);
 

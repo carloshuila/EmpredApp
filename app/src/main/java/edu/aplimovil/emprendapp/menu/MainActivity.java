@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         BottomNavigationView navBar = findViewById(btnBarraNav);
 
         navBar.setSelectedItemId(R.id.MainActivity);
