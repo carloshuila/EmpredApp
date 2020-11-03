@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/id_pedido_nombre"
-            android:layout_width="122dp"
+            android:layout_width="250dp"
             android:layout_height="17dp"
             android:layout_marginTop="12dp"
             android:background="@color/colorCintaCard"

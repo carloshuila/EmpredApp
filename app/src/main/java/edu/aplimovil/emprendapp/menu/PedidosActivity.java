@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -33,6 +34,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
 
     List<Pedido> listaPedidos = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private TextView tvTotal;
 
 
     @Override
@@ -46,11 +48,22 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            int total= 0;
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("Pedidos", document.getId() + " => " + document.getData());
                                 Pedido pedido = document.toObject(Pedido.class);
+
+                                total = total+ pedido.getPrecioTotal();
+                                tvTotal= (TextView) findViewById(R.id.totalPagar);
+
+
+
+                                tvTotal.setText(String.valueOf(total));
+
+
                                 listaPedidos.add(pedido);
                                 EnviarListarRecyclerView(listaPedidos);
+
                             }
                         } else {
                             Log.w("Erorrrrr", "Error getting documents.", task.getException());

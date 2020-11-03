@@ -2,6 +2,7 @@
     <string name="app_name">EmprendApp</string>
 
     <string name="btn_comprar">AGREGAR AL CARRITO</string>
+    <string name="btn_pagar">CONTINUAR AL PAGO</string>
     <string name="Nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
     <string name="Direccion">Direccion</string>
