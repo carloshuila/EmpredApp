@@ -7,4 +7,5 @@
     <color name="colorCintaCard">#FFFFFF</color>
     <color name="colorNegro">#000000</color>
     <color name="colorGris">#9E9E9E</color>
+    <color name="colorError">#F44336</color>
 </resources>

@@ -62,7 +62,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutPedidos"
+        android:id="@+id/contLayoutFoto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -84,14 +84,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutRecomendado"
+        android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -103,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado"
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutInformacion"
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

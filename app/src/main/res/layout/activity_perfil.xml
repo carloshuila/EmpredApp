@@ -62,7 +62,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutPedidos"
+        android:id="@+id/contLayoutFoto"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/imgBtn_perfil"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="3dp"
@@ -82,12 +82,13 @@
             tools:srcCompat="@drawable/ic_baseline_perm_identity_24" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imgBtn_editar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
             android:background="@color/colorPrimary"
+            android:onClick="onClick"
             android:tint="@color/colorBlanco"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -96,26 +97,26 @@
             app:srcCompat="@drawable/ic_edit" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="Perfil"
+            android:text="@string/Nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+            app:layout_constraintTop_toBottomOf="@+id/imgBtn_perfil" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutRecomendado"
+        android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
 
         <TextView
             android:id="@+id/textView3"
@@ -131,7 +132,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/ediText_campo_nombre"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -141,6 +142,7 @@
             android:text="Name"
             android:textColor="@color/colorGris"
             android:textSize="14sp"
+            android:enabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.06"
             app:layout_constraintStart_toStartOf="parent"
@@ -157,10 +159,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.037"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/ediText_campo_nombre" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/ediText_campo_apellido"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -170,6 +172,7 @@
             android:text="Name"
             android:textColor="@color/colorGris"
             android:textSize="14sp"
+            android:enabled="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -182,10 +185,10 @@
             android:text="@string/Direccion"
             android:textColor="@color/colorNegro"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintTop_toBottomOf="@+id/ediText_campo_apellido" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/ediText_campo_direccion"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -195,6 +198,7 @@
             android:text="Name"
             android:textColor="@color/colorGris"
             android:textSize="14sp"
+            android:enabled="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -207,10 +211,10 @@
             android:text="@string/Ciudad"
             android:textColor="@color/colorNegro"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+            app:layout_constraintTop_toBottomOf="@+id/ediText_campo_direccion" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/ediText_campo_ciudad"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -220,20 +224,21 @@
             android:text="Name"
             android:textColor="@color/colorGris"
             android:textSize="14sp"
+            android:enabled="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnGuardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="@color/colorPrimary"
-            android:text="Button"
+            android:text="@string/Guardar"
             android:textColor="@color/colorBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
+            app:layout_constraintTop_toBottomOf="@+id/ediText_campo_ciudad" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -244,7 +249,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado"
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutInformacion"
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

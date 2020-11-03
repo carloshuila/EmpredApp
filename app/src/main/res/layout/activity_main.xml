@@ -77,7 +77,7 @@
 
     <!--- menu inferior -->
     <LinearLayout
-        android:id="@+id/contLayoutPedidos"
+        android:id="@+id/contLayoutFoto"
         android:layout_width="405dp"
         android:layout_height="194dp"
         android:layout_marginTop="3dp"
@@ -95,14 +95,14 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutRecomendado"
+        android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
 
 
         <TextView
@@ -123,7 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado"
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutInformacion"
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
