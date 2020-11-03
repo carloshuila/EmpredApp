@@ -1,6 +1,8 @@
 package edu.aplimovil.emprendapp.pedido;
 
-public class Pedido {
+import java.io.Serializable;
+
+public class Pedido  implements Serializable {
     int id;
     String nombre;
     int precioTotal;

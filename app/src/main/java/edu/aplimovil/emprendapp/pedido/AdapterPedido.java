@@ -2,6 +2,8 @@ package edu.aplimovil.emprendapp.pedido;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.Serializable;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.menu.PedidosActivity;
+import edu.aplimovil.emprendapp.postres.Postre;
+import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
 
 public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHolder> {
@@ -24,6 +30,7 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
 
     public Context micontext;
     public List<Pedido> listaPedidos;
+
 
     public AdapterPedido(Context micontext, List<Pedido> listaPedidos) {
         this.micontext = micontext;
@@ -44,6 +51,26 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
         holder.nombrePedido.setText((listaPedidos.get(position).getNombre()));
         holder.precioTotal.setText((String.valueOf(listaPedidos.get(position).getPrecioTotal())));
         holder.cantidad.setText((String.valueOf(listaPedidos.get(position).getCantidad())));
+
+        final Pedido pedidoElemento = listaPedidos.get(position);
+
+        //Agregar click Listener
+        holder.cardViewEliminar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(micontext, PedidosActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("Pedidos",pedidoElemento );
+                Log.d("entro a onclik eliminar", "entrooooo");
+
+
+                //pasamos el objeto a la activity
+                intent.putExtras(bundle);
+
+                //Iniciamos la Activity
+                micontext.startActivity(intent);
+            }
+        });
 
 
 
@@ -73,6 +100,7 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
         CardView cardViewPedido;
         TextView precioTotal;
         TextView cantidad;
+        CardView cardViewEliminar;
         public MyViewHolder(View itemView){
             super(itemView);
 
@@ -81,9 +109,11 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
             nombrePedido = (TextView) itemView.findViewById(R.id.id_pedido_nombre);
             precioTotal = (TextView) itemView.findViewById(R.id.id_pedidos_total);
             cantidad = (TextView) itemView.findViewById(R.id.id_pedido_cant);
-
+            cardViewEliminar = (CardView) itemView.findViewById(R.id.id_cardViewEliminar);
 
 
         }
     }
+
+
 }

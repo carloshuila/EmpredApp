@@ -20,26 +20,25 @@
             android:id="@+id/id_pedido_img"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginStart="4dp"
             android:background="@color/colorBlanco"
-            android:contentDescription="TODO"
-            android:scaleType="centerCrop"
+
+
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="1dp" />
 
         <TextView
             android:id="@+id/id_pedido_nombre"
             android:layout_width="250dp"
             android:layout_height="17dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:background="@color/colorCintaCard"
             android:text="Producto nombre"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintHorizontal_bias="0.109"
             app:layout_constraintStart_toEndOf="@+id/id_pedido_img"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,27 +70,43 @@
             android:id="@+id/id_pedidos_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="16dp"
             android:text="20000"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/id_pedidos_eliminar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/id_pedido_nombre"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/id_pedidos_eliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/id_cardViewEliminar"
+            android:clickable="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="279dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/delete" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/id_pedido_img"
+            app:layout_constraintTop_toBottomOf="@+id/id_pedidos_total">
+
+            <ImageView
+                android:id="@+id/id_pedidos_eliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+
+                app:srcCompat="@drawable/delete" />
+
+        </androidx.cardview.widget.CardView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

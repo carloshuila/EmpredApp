@@ -3,6 +3,7 @@ package edu.aplimovil.emprendapp.postres;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,15 +15,22 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.menu.PedidosActivity;
 
 public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHolder> {
 
         private Context micontext;
         private List<Postre> listapostres;
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+    PedidosActivity eliminar;
 
         public AdapterPostres(Context micontext, List<Postre> listaPostres) {
             this.micontext = micontext;
@@ -75,6 +83,7 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
             TextView nombrePostre;
             ImageView imgPostre;
             CardView cardViewPostre;
+            CardView cardViewEliminar;
 
             public MyViewHolder(View itemView){
                 super(itemView);
@@ -82,6 +91,7 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
                 nombrePostre = (TextView) itemView.findViewById(R.id.id_postre_nombre);
                 imgPostre  = (ImageView) itemView.findViewById(R.id.id_postre_img);
                 cardViewPostre = (CardView) itemView.findViewById(R.id.id_cardViewPostre);
+                cardViewEliminar = (CardView) itemView.findViewById(R.id.id_cardViewEliminar);
             }
         }
 }

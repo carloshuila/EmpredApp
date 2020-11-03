@@ -9,9 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +30,8 @@ import java.util.List;
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.pedido.AdapterPedido;
 import edu.aplimovil.emprendapp.pedido.Pedido;
+import edu.aplimovil.emprendapp.postres.AdapterPostres;
+import edu.aplimovil.emprendapp.postres.Postre;
 
 
 public class PedidosActivity extends AppCompatActivity implements Serializable {
@@ -35,7 +41,17 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
     List<Pedido> listaPedidos = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private TextView tvTotal;
+    public String idEliminar;
+    Pedido newPedido= null;
+    Pedido pedido;
 
+    public String getIdEliminar() {
+        return idEliminar;
+    }
+
+    public void setIdEliminar(String idEliminar) {
+        this.idEliminar = idEliminar;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,10 +67,42 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                             int total= 0;
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("Pedidos", document.getId() + " => " + document.getData());
-                                Pedido pedido = document.toObject(Pedido.class);
+                                setIdEliminar(document.getId());
+                                idEliminar = getIdEliminar();
+                                Log.d("identificadorrrrr",idEliminar);
+                                pedido = document.toObject(Pedido.class);
 
                                 total = total+ pedido.getPrecioTotal();
                                 tvTotal= (TextView) findViewById(R.id.totalPagar);
+
+
+                                Bundle pedidoEnviado = getIntent().getExtras();
+                                if (pedidoEnviado != null) {
+                                    newPedido = (Pedido) pedidoEnviado.getSerializable("Pedidos");
+
+                                    Log.d("ooooooooo", newPedido.getNombre());
+                                    if (newPedido.getId() == pedido.getId()) {
+
+
+                                        //Eliminar pedido
+                                        Log.d("iddelimiarrrrrr", idEliminar);
+                                        db.collection("pedidos").document(idEliminar)
+                                                .delete()
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Log.d("Eliminar", "DocumentSnapshot successfully deleted!");
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Log.w("Eliminar Error", "Error deleting document", e);
+                                                    }
+                                                });
+                                    }
+
+                                }
 
 
 
@@ -70,6 +118,14 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                         }
                     }
                 });
+
+
+
+        //Recibir datos
+
+
+
+
 
 
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
@@ -93,6 +149,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                 return false;
             }
         });
+
     }
 
     public void  EnviarListarRecyclerView( List<Pedido> mispedidos){
@@ -101,4 +158,5 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(MyAdapter);
     }
+
 }
