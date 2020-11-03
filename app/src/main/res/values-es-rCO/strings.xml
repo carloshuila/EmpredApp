@@ -8,4 +8,11 @@
     <string name="Guardar">Guardar</string>
     <string name="NuestrosProductos">Nuestros productos</string>
     <string name="RecomendadoDia">Recomendado del dia</string>
+    <string name="Bienvenido">Bienvenido a</string>
+    <string name="btn_comprar">AGREGAR AL CARRITO</string>
+    <string name="btn_pagar">CONTINUAR AL PAGO</string>
+    <string name="btn_InicioSesion">Inicar Sesión</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="Contraseña">Constraseña</string>
+    <string name="MarLeches">Mar de leches</string>
 </resources>
