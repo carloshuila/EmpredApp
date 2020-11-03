@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
@@ -27,6 +28,8 @@ import java.util.Map;
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.menu.PedidosActivity;
 import edu.aplimovil.emprendapp.pedido.Pedido;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class PostreConectActivity extends AppCompatActivity {
 
@@ -80,22 +83,11 @@ public class PostreConectActivity extends AppCompatActivity {
                 tvTotal.setText(String.valueOf(cantidadTotal));
             }
         });
-
-
-
-
     }
 
 
-
-
-
-
-
     public void agregarCarrito(View view) {
-
-
-
+        Toast.makeText(this, "Se agrego un producto a tu pedido", LENGTH_SHORT).show();
         // Create a new user with a first, middle, and last name
         Map<String, Object> Pedido = new HashMap<>();
         Pedido.put("id", postre.getId());

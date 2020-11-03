@@ -74,12 +74,10 @@
         app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior" />
 
     <!--- Producto recomendado -->
-
-    <!--- menu inferior -->
     <LinearLayout
         android:id="@+id/contLayoutFoto"
         android:layout_width="405dp"
-        android:layout_height="194dp"
+        android:layout_height="190dp"
         android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,16 +87,16 @@
             android:id="@+id/id_recyclerView_Categorias"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
-
-
+            android:orientation="horizontal">
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +110,20 @@
             android:layout_marginTop="3dp"
             android:text="@string/RecomendadoDia"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+        </TextView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recyclerView_producto_recomendado"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

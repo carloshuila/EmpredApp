@@ -30,7 +30,7 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
         private Context micontext;
         private List<Postre> listapostres;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-    PedidosActivity eliminar;
+
 
         public AdapterPostres(Context micontext, List<Postre> listaPostres) {
             this.micontext = micontext;
@@ -77,7 +77,6 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
         public int getItemCount() {
             return listapostres.size();
         }
-
 
         public static class MyViewHolder extends RecyclerView.ViewHolder{
             TextView nombrePostre;

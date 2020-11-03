@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +34,8 @@ import edu.aplimovil.emprendapp.pedido.Pedido;
 import edu.aplimovil.emprendapp.postres.AdapterPostres;
 import edu.aplimovil.emprendapp.postres.Postre;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 
 public class PedidosActivity extends AppCompatActivity implements Serializable {
 
@@ -44,6 +47,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
     public String idEliminar;
     Pedido newPedido= null;
     Pedido pedido;
+    public int  bandera = 0;
 
     public String getIdEliminar() {
         return idEliminar;
@@ -92,6 +96,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
                                                         Log.d("Eliminar", "DocumentSnapshot successfully deleted!");
+                                                        bandera= 1;
                                                     }
                                                 })
                                                 .addOnFailureListener(new OnFailureListener() {
@@ -104,14 +109,9 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
 
                                 }
 
-
-
                                 tvTotal.setText(String.valueOf(total));
-
-
                                 listaPedidos.add(pedido);
                                 EnviarListarRecyclerView(listaPedidos);
-
                             }
                         } else {
                             Log.w("Erorrrrr", "Error getting documents.", task.getException());
@@ -119,14 +119,9 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                     }
                 });
 
-
-
-        //Recibir datos
-
-
-
-
-
+        if (bandera==1){
+            Toast.makeText(this, "Se Elimino un producto a tu pedido", LENGTH_SHORT).show();
+        }
 
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         navBar.setSelectedItemId(R.id.PedidosActivity);
@@ -157,6 +152,10 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
         AdapterPedido MyAdapter = new AdapterPedido(this,mispedidos);
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
         myRecyclerView.setAdapter(MyAdapter);
+    }
+
+    public void mensajeEliminar(){
+        Toast.makeText(this, "Se Elimino un producto a tu pedido", LENGTH_SHORT).show();
     }
 
 }

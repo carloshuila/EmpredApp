@@ -24,12 +24,6 @@ import edu.aplimovil.emprendapp.menu.PedidosActivity;
 
 public class PerfilActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton btnEditar;
-    Button btnGuardar;
-    EditText campoNombre;
-    EditText campoApellido;
-    EditText campoDireccion;
-    EditText campoCiudad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +34,6 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         FirebaseFirestore db= FirebaseFirestore.getInstance();
         //Barra navegacion
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
-        //botones
-        btnEditar = findViewById(R.id.imgBtn_editar);
-        btnGuardar=findViewById(R.id.btnGuardar);
-        btnGuardar.setEnabled(false);
-        //campos de texto
-        campoNombre = findViewById(R.id.ediText_campo_nombre);
-        campoApellido = findViewById(R.id.ediText_campo_apellido);
-        campoDireccion = findViewById(R.id.ediText_campo_direccion);
-        campoCiudad = findViewById(R.id.ediText_campo_ciudad);
 
         //Configuracion de barra de navegacion, rutas
         navBar.setSelectedItemId(R.id.PedidosActivity);
@@ -71,31 +56,12 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        btnEditar.setOnClickListener(this);
-        btnGuardar.setOnClickListener(this);
 
     }
 
     @SuppressLint("ResourceAsColor")
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.imgBtn_editar:
-                btnGuardar.setEnabled(true);
-                campoNombre.setEnabled(true);
-                campoApellido.setEnabled(true);
-                campoDireccion.setEnabled(true);
-                campoCiudad.setEnabled(true);
-            break;
-            case R.id.btnGuardar:
-                if (campoNombre.getText().equals("")) {
-                    campoNombre.setBackgroundColor(R.color.colorError);
-                }
-                else{
-                    break;
-                }
 
-                break;
-        }
     }
 }

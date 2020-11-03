@@ -37,6 +37,7 @@ import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 public class MainActivity extends AppCompatActivity {
 
     public List<Categoria> listaCategorias = new ArrayList<>();
+    public List<Postre> listaRecomendados = new ArrayList<>();
     public  FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -57,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
                                 Categoria categoria = document.toObject(Categoria.class);
                                 listaCategorias.add(categoria);
                                 EnviarListarRecyclerView(listaCategorias);
+                            }
+                        } else {
+                            Log.w("Erorrrrr", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
+        db.collection("postres")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("Postres", document.getId() + " => " + document.getData());
+                                Postre postre = document.toObject(Postre.class);
+                                listaRecomendados.add(postre);
+                                EnviarListarRecyclerViewRecomendados(listaRecomendados);
                             }
                         } else {
                             Log.w("Erorrrrr", "Error getting documents.", task.getException());
@@ -103,6 +122,14 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_Categorias);
         myRecyclerView.setLayoutManager(layoutManager);
         AdapterCategoria MyAdapter = new AdapterCategoria(this,misCategorias);
+        myRecyclerView.setAdapter(MyAdapter);
+    }
+
+    public void  EnviarListarRecyclerViewRecomendados( List<Postre> misRecomendados){
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_producto_recomendado);
+        myRecyclerView.setLayoutManager(layoutManager);
+        AdapterPostres MyAdapter = new AdapterPostres(this,misRecomendados);
         myRecyclerView.setAdapter(MyAdapter);
     }
 

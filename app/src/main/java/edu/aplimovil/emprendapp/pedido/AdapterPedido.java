@@ -54,7 +54,7 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
 
         final Pedido pedidoElemento = listaPedidos.get(position);
 
-        //Agregar click Listener
+        //pasamos el objeto a  Eliminar
         holder.cardViewEliminar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -62,7 +62,6 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("Pedidos",pedidoElemento );
                 Log.d("entro a onclik eliminar", "entrooooo");
-
 
                 //pasamos el objeto a la activity
                 intent.putExtras(bundle);
