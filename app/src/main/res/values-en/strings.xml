@@ -8,4 +8,5 @@
     <string name="Guardar">Save</string>
     <string name="NuestrosProductos">Our products</string>
     <string name="RecomendadoDia">Recommended of the day</string>
+    <string name="btn_comprar">ADD TO CART</string>
 </resources>
