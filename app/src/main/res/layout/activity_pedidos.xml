@@ -22,7 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnCesta"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -59,7 +61,8 @@
             app:layout_constraintStart_toEndOf="@+id/btnFiltros" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--- pedidos contenedor -->
+    <LinearLayout
         android:id="@+id/contLayoutPedidos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -68,18 +71,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:text="Mis pedidos"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recyclerView_pedidos"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="horizontal">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutRecomendado"

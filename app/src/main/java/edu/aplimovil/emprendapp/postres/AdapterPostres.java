@@ -63,8 +63,6 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
                 }
             });
 
-
-
         }
 
         @Override

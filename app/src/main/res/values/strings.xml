@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EmprendApp</string>
+    <string name="btn_comprar">AGREGAR AL CARRITO</string>
 </resources>

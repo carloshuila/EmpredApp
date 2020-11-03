@@ -2,21 +2,62 @@ package edu.aplimovil.emprendapp.menu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.pedido.AdapterPedido;
+import edu.aplimovil.emprendapp.pedido.Pedido;
 
-public class PedidosActivity extends AppCompatActivity {
+
+public class PedidosActivity extends AppCompatActivity implements Serializable {
+
+
+
+    List<Pedido> listaPedidos = new ArrayList<>();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
+
+        db.collection("pedidos")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("Pedidos", document.getId() + " => " + document.getData());
+                                Pedido pedido = document.toObject(Pedido.class);
+                                listaPedidos.add(pedido);
+                                EnviarListarRecyclerView(listaPedidos);
+                            }
+                        } else {
+                            Log.w("Erorrrrr", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
 
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         navBar.setSelectedItemId(R.id.PedidosActivity);
@@ -39,5 +80,12 @@ public class PedidosActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void  EnviarListarRecyclerView( List<Pedido> mispedidos){
+        RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_pedidos);
+        AdapterPedido MyAdapter = new AdapterPedido(this,mispedidos);
+        myRecyclerView.setLayoutManager(new GridLayoutManager(this,1));
+        myRecyclerView.setAdapter(MyAdapter);
     }
 }
