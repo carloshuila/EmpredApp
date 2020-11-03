@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.menu.MainActivity;
@@ -35,6 +36,8 @@ public class PerfilActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         //variables
+        //base datos
+        FirebaseFirestore db= FirebaseFirestore.getInstance();
         //Barra navegacion
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         //botones
