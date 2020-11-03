@@ -11,75 +11,83 @@ public class Usuario  implements Serializable {
     private String ciudad;
     private String email;
     private String pass;
+    private  String  foto;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre,String apellido, String direccion,String ciudad, String email,String pass) {
+    public Usuario(int id, String nombre, String apellido, String direccion, String ciudad, String email, String pass, String foto) {
         this.id = id;
-        this.nombre=nombre;
-        this.apellido=apellido;
-        this.direccion=direccion;
-        this.ciudad=ciudad;
-        this.email=email;
-        this.pass=pass;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.email = email;
+        this.pass = pass;
+        this.foto = foto;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public String getDireccion() {
         return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
     }
 
     public String getCiudad() {
         return ciudad;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPass() {
         return pass;
     }
 
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public void setPass(String pass) {
         this.pass = pass;
     }
 
-
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
 }

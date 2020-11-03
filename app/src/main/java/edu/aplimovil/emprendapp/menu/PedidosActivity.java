@@ -29,6 +29,7 @@ import java.util.List;
 
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.login.LoginActivity;
 import edu.aplimovil.emprendapp.pedido.AdapterPedido;
 import edu.aplimovil.emprendapp.pedido.Pedido;
 import edu.aplimovil.emprendapp.postres.AdapterPostres;
@@ -158,4 +159,9 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
         Toast.makeText(this, "Se Elimino un producto a tu pedido", LENGTH_SHORT).show();
     }
 
+
+    public void Pagar(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 }

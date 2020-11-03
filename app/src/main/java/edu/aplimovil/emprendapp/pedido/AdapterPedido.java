@@ -75,15 +75,6 @@ public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHold
 
         Glide.with(micontext).load(listaPedidos.get(position).getImagen()).into(holder.imgPedido);
 
-        //Agregar click Listener
-        holder.cardViewPedido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //--------Iniciamos la Activity
-
-            }
-        });
 
     }
 

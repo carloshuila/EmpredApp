@@ -122,10 +122,12 @@
             android:paddingTop="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintStart_toStartOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
+//menuu
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"

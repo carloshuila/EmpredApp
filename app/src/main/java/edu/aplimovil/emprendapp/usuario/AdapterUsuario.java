@@ -23,9 +23,9 @@ import edu.aplimovil.emprendapp.postres.AdapterPostres;
 import edu.aplimovil.emprendapp.postres.Postre;
 import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
-public class AdapterUsuario  {
+public class AdapterUsuario extends RecyclerView.Adapter<AdapterUsuario.MyViewHolder>  {
 
-   /* private Context micontext;
+    private Context micontext;
     private List<Usuario> listaUsuarios;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -40,55 +40,48 @@ public class AdapterUsuario  {
 
         View miview;
         LayoutInflater minflater = LayoutInflater.from(micontext);
-        miview = minflater.inflate(R.layout.cardview_item_postres,miparent,false);
-        return new AdapterPostres.MyViewHolder(miview);
+        miview = minflater.inflate(R.layout.cardview_item_perfil,miparent,false);
+        return new AdapterUsuario.MyViewHolder(miview);
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterPostres.MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull AdapterUsuario.MyViewHolder holder, final int position) {
 
-        holder.nombrePostre.setText((listapostres.get(position).getNombre()));
-        Glide.with(micontext).load(listapostres.get(position).getImagen()).into(holder.imgPostre);
+        holder.nombreUsuario.setText((listaUsuarios.get(position).getNombre()));
+        holder.apellidosUsuario.setText((listaUsuarios.get(position).getApellido()));
+        holder.ciudadUsuario.setText((listaUsuarios.get(position).getCiudad()));
+        holder.direccionUsuario.setText((listaUsuarios.get(position).getDireccion()));
+        holder.emailUsuario.setText((listaUsuarios.get(position).getEmail()));
 
-        final Postre postre = listapostres.get(position);
+        Glide.with(micontext).load(listaUsuarios.get(position).getFoto()).into(holder.imgUsuario);
 
-        //Agregar click Listener
-        holder.cardViewPostre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        final Usuario usuario = listaUsuarios.get(position);
 
-                Intent intent = new Intent(micontext, PostreConectActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("Postre", postre);
 
-                //pasamos el objeto a la activity
-                intent.putExtras(bundle);
-
-                //Iniciamos la Activity
-                micontext.startActivity(intent);
-            }
-        });
 
     }
 
     @Override
     public int getItemCount() {
-        return listapostres.size();
+        return listaUsuarios.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView nombrePostre;
-        ImageView imgPostre;
-        CardView cardViewPostre;
-        CardView cardViewEliminar;
+        TextView nombreUsuario, apellidosUsuario, direccionUsuario, ciudadUsuario, emailUsuario;
+        ImageView imgUsuario;
+        CardView cardViewUsuario;
 
         public MyViewHolder(View itemView){
             super(itemView);
 
-            nombrePostre = (TextView) itemView.findViewById(R.id.id_postre_nombre);
-            imgPostre  = (ImageView) itemView.findViewById(R.id.id_postre_img);
-            cardViewPostre = (CardView) itemView.findViewById(R.id.id_cardViewPostre);
-            cardViewEliminar = (CardView) itemView.findViewById(R.id.id_cardViewEliminar);
+            nombreUsuario = (TextView) itemView.findViewById(R.id.id_usuario_nombre);
+            apellidosUsuario = (TextView) itemView.findViewById(R.id.id_apellido);
+            direccionUsuario = (TextView) itemView.findViewById(R.id.id_direccion);
+            ciudadUsuario = (TextView) itemView.findViewById(R.id.id_ciudad);
+            emailUsuario = (TextView) itemView.findViewById(R.id.id_email);
+            imgUsuario  = (ImageView) itemView.findViewById(R.id.id_pelfil_img);
+            cardViewUsuario = (CardView) itemView.findViewById(R.id.id_cardViewUsuario);
         }
-    }*/
+    }
 }

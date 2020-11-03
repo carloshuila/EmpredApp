@@ -24,7 +24,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
-        android:contentDescription="@string/MarLeches"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,14 +80,6 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         tools:text="@string/btn_InicioSesion" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
