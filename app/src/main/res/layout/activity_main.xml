@@ -9,10 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutSuperior"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_height="80dp"
+        android:background="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
+            android:background="@color/colorBlanco"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -31,8 +30,10 @@
             android:id="@+id/btnFiltros"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
+            android:background="@color/colorBlanco"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnAtras"
             app:srcCompat="@drawable/ic_filter_list" />
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
+            android:background="@color/colorBlanco"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_shopping_basket" />
@@ -52,48 +54,67 @@
             android:layout_height="39dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="25dp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/btnFiltros" />
+            app:layout_constraintStart_toEndOf="@+id/btnFiltros"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.852" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--- caja categorias-->
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="@string/NuestrosProductos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior" />
+
+    <!--- Producto recomendado -->
+
+    <!--- menu inferior -->
     <LinearLayout
-        android:id="@+id/contLayoutPedidos"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="5dp"
+        android:id="@+id/contLayoutFoto"
+        android:layout_width="405dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/id_recyclerView_Categorias"
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:orientation="horizontal">
-        </androidx.recyclerview.widget.RecyclerView>
+            android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
 
 
     </LinearLayout>
 
-    <!--- Producto recomendado -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutRecomendado"
+        android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
         android:layout_height="100dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
 
 
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/RecomendadoDia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--- menu inferior -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"
@@ -102,19 +123,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutRecomendado"
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutInformacion"
         app:layout_constraintVertical_bias="1.0">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btnBarraNav"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:itemTextColor="#7986CB"
+            app:itemTextColor="@color/colorGris"
             app:labelVisibilityMode="auto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:backgroundTint="@color/colorBlanco"
+            app:itemIconTint="@color/colorPrimary"
             app:menu="@menu/btn_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,8 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EmprendApp</string>
-<<<<<<< HEAD
-    <string name="btn_comprar">AGREGAR AL CARRITO</string>
-=======
     <string name="Nombre">Nombre</string>
     <string name="Apellido">Apellido</string>
     <string name="Direccion">Direccion</string>
@@ -10,5 +8,4 @@
     <string name="Guardar">Guardar</string>
     <string name="NuestrosProductos">Nuestros productos</string>
     <string name="RecomendadoDia">Recomendado del dia</string>
->>>>>>> a06f19eb057e7178263910bfd679a646de2ec75b
 </resources>

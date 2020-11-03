@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EmprendApp</string>
+    <string name="Nombre">Name</string>
+    <string name="Apellido">Last name</string>
+    <string name="Direccion">Address</string>
+    <string name="Ciudad">City</string>
+    <string name="Guardar">Save</string>
+    <string name="NuestrosProductos">Our products</string>
+    <string name="RecomendadoDia">Recommended of the day</string>
+</resources>
