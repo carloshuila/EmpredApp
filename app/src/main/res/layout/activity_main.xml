@@ -68,6 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:text="@string/NuestrosProductos"
+        android:textColor="@color/colorNegro"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,9 +111,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:text="@string/RecomendadoDia"
+            android:textColor="@color/colorNegro"
+            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </TextView>
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
         <androidx.recyclerview.widget.RecyclerView
