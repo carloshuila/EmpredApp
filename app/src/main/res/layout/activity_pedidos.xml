@@ -65,97 +65,108 @@
 
 
     <!--- pedidos contenedor -->
-    <LinearLayout
-        android:id="@+id/contLayoutPedidos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/id_recyclerView_pedidos"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:orientation="horizontal" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="26dp"
-        android:gravity="right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="115dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="4dp"
-            android:paddingStart="30dp"
-            android:text="Total:"
-            android:textColor="@color/colorNegro"
-            android:textSize="20dp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:id="@+id/totalPagar"
-            android:layout_width="115dp"
-            android:layout_height="30dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="200dp"
-            android:paddingStart="30dp"
-            android:text=" "
-            android:textColor="@color/colorNegro"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginHorizontal="20dp"
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="120dp"
-        android:gravity="center"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.54">
-
-
-        <Button
-            android:id="@+id/id_btn_pagar"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/add_to_cart_bg"
-            android:gravity="center"
-            android:onClick="Pagar"
-            android:text="@string/btn_pagar"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
-
-    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contLayoutInformacion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_width="410dp"
+        android:layout_height="604dp"
+        app:layout_constraintBottom_toTopOf="@+id/contLayouyBarraNav"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mipedido"
+            android:textColor="@color/colorNegro"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/contLayoutPedidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/id_recyclerView_pedidos"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.01999998">
+
+
+            <Button
+                android:id="@+id/id_btn_pagar"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:onClick="Pagar"
+                android:text="@string/btn_pagar"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="4dp"
+                android:paddingStart="30dp"
+                android:text="Total:"
+                android:textColor="@color/colorNegro"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/totalPagar"
+                android:layout_width="115dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="200dp"
+                android:paddingStart="30dp"
+                android:text=" "
+                android:textColor="@color/colorNegro"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -166,22 +177,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutInformacion"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/btnBarraNav"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:backgroundTint="@color/colorBlanco"
+            app:itemIconTint="@color/colorPrimary"
             app:itemTextColor="@color/colorGris"
             app:labelVisibilityMode="auto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:backgroundTint="@color/colorBlanco"
-            app:itemIconTint="@color/colorPrimary"
             app:menu="@menu/btn_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

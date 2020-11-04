@@ -18,4 +18,7 @@
     <string name="verPerfil">Editar perfil</string>
     <string name="Postres">Postres</string>
     <string name="metodoPago">Método de pago</string>
+    <string name="recuperacionContra">¿Perdiste tu contraseña?</string>
+    <string name="mensajeRegistro">¿Eres nuevo aquí? Registrate</string>
+    <string name="mipedido">Mi pedido</string>
 </resources>
