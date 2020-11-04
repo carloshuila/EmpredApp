@@ -71,7 +71,7 @@ public class PerfilActivity extends AppCompatActivity  {
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
 
         //Configuracion de barra de navegacion, rutas
-        navBar.setSelectedItemId(R.id.PedidosActivity);
+        navBar.setSelectedItemId(R.id.PerfilActivity);
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

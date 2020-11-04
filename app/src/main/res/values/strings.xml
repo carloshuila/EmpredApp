@@ -21,6 +21,7 @@
     <string name="mensajeRegistro">¿Eres nuevo aquí? Registrate</string>
     <string name="recuperacionContra">¿Perdiste tu contraseña?</string>
     <string name="mipedido">Mi pedido</string>
+    <string name="perfil">Mi perfil</string>
 
 
 </resources>

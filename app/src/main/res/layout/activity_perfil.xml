@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlanco"
     tools:context=".menu.PerfilActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,32 +64,47 @@
 
     //// contenedor perfil
 
+
+    /////perfil
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
 
         <TextView
             android:id="@+id/textView7"
-            android:layout_width="151dp"
-            android:layout_height="17dp"
-            android:layout_marginBottom="60dp"
-            android:text="Mi Perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil"
+            android:textAlignment="center"
+            android:textColor="@color/colorNegro"
+            android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"></TextView>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"></TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recyclerView_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
-/////perfil
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"
@@ -105,29 +121,15 @@
             android:id="@+id/btnBarraNav"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:backgroundTint="@color/colorBlanco"
+            app:itemIconTint="@color/colorPrimary"
             app:itemTextColor="@color/colorGris"
             app:labelVisibilityMode="auto"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:backgroundTint="@color/colorBlanco"
-            app:itemIconTint="@color/colorPrimary"
             app:menu="@menu/btn_nav_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/id_recyclerView_perfil"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="84dp"
-        android:orientation="horizontal"
-        android:paddingTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
-
-    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
