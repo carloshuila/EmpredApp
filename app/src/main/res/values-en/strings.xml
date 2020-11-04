@@ -17,4 +17,5 @@
     <string name="MarLeches">Mar de leches</string>
     <string name="Postres">Desserts</string>
     <string name="verPerfil">" Edit profile"</string>
+    <string name="metodoPago">" Payment method"</string>
 </resources>

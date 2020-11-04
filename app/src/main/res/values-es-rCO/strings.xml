@@ -17,4 +17,5 @@
     <string name="MarLeches">Mar de leches</string>
     <string name="verPerfil">Editar perfil</string>
     <string name="Postres">Postres</string>
+    <string name="metodoPago">Método de pago</string>
 </resources>
