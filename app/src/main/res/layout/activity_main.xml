@@ -94,13 +94,14 @@
     </LinearLayout>
 
 
+    //menuu
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayoutInformacion"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contLayoutFoto">
 
@@ -109,28 +110,34 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="0dp"
             android:text="@string/RecomendadoDia"
             android:textColor="@color/colorNegro"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/id_recyclerView_producto_recomendado"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="-10dp"
             android:orientation="horizontal"
-            android:paddingTop="30dp"
+            android:paddingTop="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7">
 
         </androidx.recyclerview.widget.RecyclerView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-//menuu
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/contLayouyBarraNav"
         android:layout_width="0dp"

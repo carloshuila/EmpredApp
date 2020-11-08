@@ -26,6 +26,7 @@ import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.categorias.AdapterCategoria;
+import edu.aplimovil.emprendapp.categorias.AdapterRecomendado;
 import edu.aplimovil.emprendapp.categorias.Categoria;
 import edu.aplimovil.emprendapp.postres.AdapterPostres;
 import edu.aplimovil.emprendapp.postres.Postre;
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_producto_recomendado);
         myRecyclerView.setLayoutManager(layoutManager);
-        AdapterPostres MyAdapter = new AdapterPostres(this,misRecomendados);
+        AdapterRecomendado MyAdapter = new AdapterRecomendado(this,misRecomendados);
         myRecyclerView.setAdapter(MyAdapter);
     }
 
