@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +40,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 public class PedidosActivity extends AppCompatActivity implements Serializable {
 
 
-
+    ImageButton btnAtras;
     List<Pedido> listaPedidos = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private TextView tvTotal;
@@ -59,6 +61,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedidos);
+
 
         db.collection("pedidos")
                 .get()
@@ -120,7 +123,19 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
         if (bandera==1){
             Toast.makeText(this, "Se Elimino un producto a tu pedido", LENGTH_SHORT).show();
         }
+        //logica barra superior
+        //Boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
+
+
+        //Barra inferior
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
         navBar.setSelectedItemId(R.id.PedidosActivity);
 
@@ -142,6 +157,7 @@ public class PedidosActivity extends AppCompatActivity implements Serializable {
                 return false;
             }
         });
+        //fin barra inferior
 
     }
 
