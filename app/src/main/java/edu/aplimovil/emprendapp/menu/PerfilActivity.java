@@ -1,22 +1,14 @@
 package edu.aplimovil.emprendapp.menu;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,11 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
-import edu.aplimovil.emprendapp.categorias.Categoria;
-import edu.aplimovil.emprendapp.menu.MainActivity;
-import edu.aplimovil.emprendapp.menu.PedidosActivity;
-import edu.aplimovil.emprendapp.postres.AdapterPostres;
-import edu.aplimovil.emprendapp.postres.Postre;
 import edu.aplimovil.emprendapp.usuario.AdapterUsuario;
 import edu.aplimovil.emprendapp.usuario.Usuario;
 

@@ -2,6 +2,7 @@ package edu.aplimovil.emprendapp.categorias;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +16,8 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.postres.PostreActivity;
-import edu.aplimovil.emprendapp.postres.PostreConectActivity;
+import edu.aplimovil.emprendapp.yogurt.Yogurt;
+import edu.aplimovil.emprendapp.yogurt.YogurtActivity;
 
 
 public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.MyViewHolder> {
@@ -48,9 +50,23 @@ public class AdapterCategoria extends RecyclerView.Adapter<AdapterCategoria.MyVi
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(micontext, PostreActivity.class);
-                //--------Iniciamos la Activity PostresActivity
-                micontext.startActivity(intent);
+
+                Log.d("nombre categoriaaaa",listaCategorias.get(position).nombre );
+                    if(listaCategorias.get(position).nombre == "Yogurt"){
+                        Intent  intent = new Intent(micontext, YogurtActivity.class);
+                        Log.d("entroooo", "entrroooo");
+                        //--------Iniciamos la Activity PostresActivity
+                        micontext.startActivity(intent);
+                    }
+                    else{
+                        Intent intent = new Intent(micontext, PostreActivity.class);
+                        //--------Iniciamos la Activity PostresActivity
+                        micontext.startActivity(intent);
+
+                    }
+
+
+
 
             }
         });

@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import edu.aplimovil.emprendapp.productos.Productos;
 
-public class Postre  extends Productos implements Serializable {
+public class Yogurt extends Productos implements Serializable {
     private int id;
     private String nombre;
     private String categoria;
@@ -13,11 +13,11 @@ public class Postre  extends Productos implements Serializable {
     private int precio;
     private String imagen;
 
-    public Postre() {
+    public Yogurt() {
 
     }
 
-    public Postre(int id, String nombre, String categoria, String sabor, String descripcion, int precio, String imagen) {
+    public Yogurt(int id, String nombre, String categoria, String sabor, String descripcion, int precio, String imagen) {
         super(id, nombre);
         this.categoria = categoria;
         this.sabor = sabor;

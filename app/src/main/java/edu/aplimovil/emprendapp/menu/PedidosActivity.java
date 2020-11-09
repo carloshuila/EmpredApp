@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,8 +31,6 @@ import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.login.LoginActivity;
 import edu.aplimovil.emprendapp.pedido.AdapterPedido;
 import edu.aplimovil.emprendapp.pedido.Pedido;
-import edu.aplimovil.emprendapp.postres.AdapterPostres;
-import edu.aplimovil.emprendapp.postres.Postre;
 
 import static android.widget.Toast.LENGTH_SHORT;
 

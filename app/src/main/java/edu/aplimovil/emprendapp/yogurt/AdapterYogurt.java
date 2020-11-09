@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.postres;
+package edu.aplimovil.emprendapp.yogurt;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,17 +19,19 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.postres.Yogurt;
+import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
-public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHolder> {
+public class AdapterYogurt extends RecyclerView.Adapter<AdapterYogurt.MyViewHolder> {
 
         private Context micontext;
-        private List<Yogurt> listapostres;
+        private List<Yogurt> listayogurt;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
-        public AdapterPostres(Context micontext, List<Yogurt> listaPostres) {
+        public AdapterYogurt(Context micontext, List<Yogurt> listaYogurt) {
             this.micontext = micontext;
-            listapostres = listaPostres;
+            listayogurt = listaYogurt;
         }
 
         @Override
@@ -37,26 +39,26 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
 
             View miview;
             LayoutInflater minflater = LayoutInflater.from(micontext);
-            miview = minflater.inflate(R.layout.cardview_item_postres,miparent,false);
+            miview = minflater.inflate(R.layout.cardview_item_yogurt,miparent,false);
             return new MyViewHolder(miview);
         }
 
         @Override
         public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
-            holder.nombrePostre.setText((listapostres.get(position).getNombre()));
-            Glide.with(micontext).load(listapostres.get(position).getImagen()).into(holder.imgPostre);
+            holder.nombreYogurt.setText((listayogurt.get(position).getNombre()));
+            Glide.with(micontext).load(listayogurt.get(position).getImagen()).into(holder.imgYogurt);
 
-            final Yogurt postre = listapostres.get(position);
+            final Yogurt yogurt = listayogurt.get(position);
 
             //Agregar click Listener
-            holder.cardViewPostre.setOnClickListener(new View.OnClickListener() {
+            holder.cardViewYogurt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Intent intent = new Intent(micontext, PostreConectActivity.class);
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("Postre", postre);
+                    bundle.putSerializable("Yogurt", yogurt);
 
                     //pasamos el objeto a la activity
                     intent.putExtras(bundle);
@@ -70,21 +72,21 @@ public class AdapterPostres extends RecyclerView.Adapter<AdapterPostres.MyViewHo
 
         @Override
         public int getItemCount() {
-            return listapostres.size();
+            return listayogurt.size();
         }
 
         public static class MyViewHolder extends RecyclerView.ViewHolder{
-            TextView nombrePostre;
-            ImageView imgPostre;
-            CardView cardViewPostre;
+            TextView nombreYogurt;
+            ImageView imgYogurt;
+            CardView cardViewYogurt;
             CardView cardViewEliminar;
 
             public MyViewHolder(View itemView){
                 super(itemView);
 
-                nombrePostre = (TextView) itemView.findViewById(R.id.id_postre_nombre);
-                imgPostre  = (ImageView) itemView.findViewById(R.id.id_postre_img);
-                cardViewPostre = (CardView) itemView.findViewById(R.id.id_cardViewPostre);
+                nombreYogurt = (TextView) itemView.findViewById(R.id.id_yogurt_nombre);
+                imgYogurt = (ImageView) itemView.findViewById(R.id.id_yogurt_img);
+                cardViewYogurt = (CardView) itemView.findViewById(R.id.id_cardViewYogurt);
                 cardViewEliminar = (CardView) itemView.findViewById(R.id.id_cardViewEliminar);
             }
         }

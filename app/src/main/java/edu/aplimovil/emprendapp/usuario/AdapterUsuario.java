@@ -1,8 +1,6 @@
 package edu.aplimovil.emprendapp.usuario;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +17,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
-import edu.aplimovil.emprendapp.postres.AdapterPostres;
-import edu.aplimovil.emprendapp.postres.Postre;
-import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
 public class AdapterUsuario extends RecyclerView.Adapter<AdapterUsuario.MyViewHolder>  {
 

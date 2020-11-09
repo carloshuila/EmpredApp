@@ -1,7 +1,4 @@
-package edu.aplimovil.emprendapp.postres;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package edu.aplimovil.emprendapp.yogurt;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +10,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
@@ -26,13 +26,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import edu.aplimovil.emprendapp.R;
-import edu.aplimovil.emprendapp.menu.*;
-
-import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
+import edu.aplimovil.emprendapp.menu.MainActivity;
+import edu.aplimovil.emprendapp.menu.PedidosActivity;
+import edu.aplimovil.emprendapp.menu.PerfilActivity;
+import edu.aplimovil.emprendapp.postres.Yogurt;
 
 import static android.widget.Toast.LENGTH_SHORT;
+import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
-public class PostreConectActivity extends AppCompatActivity {
+public class YogurtConectActivity extends AppCompatActivity {
 
     private TextView tvNombre, tvDescripcion,tvPrecio, tvTotal;
     private ImageView ivImagen;
@@ -42,7 +44,7 @@ public class PostreConectActivity extends AppCompatActivity {
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    Yogurt postre = null;
+    Yogurt yogurt = null;
     public  String num;
     public  int cantidadTotal;
 
@@ -82,17 +84,17 @@ public class PostreConectActivity extends AppCompatActivity {
         });
 
         //Recibir datos
-        Bundle postreEnviado = getIntent().getExtras();
-        if (postreEnviado != null){
-            postre = (Yogurt) postreEnviado.getSerializable("Postre");
+        Bundle yogurtEnviado = getIntent().getExtras();
+        if (yogurtEnviado != null){
+            yogurt = (Yogurt) yogurtEnviado.getSerializable("Yogurt");
 
             //Pasa los valores para mostrar
-            tvNombre.setText(postre.getNombre().toString());
-            tvDescripcion.setText(postre.getDescripcion().toString());
-            tvPrecio.setText(String.valueOf(postre.getPrecio()));
-            tvTotal.setText(String.valueOf(postre.getPrecio()));
+            tvNombre.setText(yogurt.getNombre().toString());
+            tvDescripcion.setText(yogurt.getDescripcion().toString());
+            tvPrecio.setText(String.valueOf(yogurt.getPrecio()));
+            tvTotal.setText(String.valueOf(yogurt.getPrecio()));
 
-            Glide.with(this).load(postre.getImagen()).into(ivImagen);
+            Glide.with(this).load(yogurt.getImagen()).into(ivImagen);
 
         }
       // Obteber cantidad seleccionada
@@ -102,7 +104,7 @@ public class PostreConectActivity extends AppCompatActivity {
             public void onClick(View view) {
                 num= btnCantidad.getNumber();
                 Log.d("Cantidaddd", num);
-                cantidadTotal = (Integer.parseInt(num))*postre.getPrecio();
+                cantidadTotal = (Integer.parseInt(num))*yogurt.getPrecio();
                 Log.d("PRECIOO",String.valueOf (cantidadTotal));
                 tvTotal.setText(String.valueOf(cantidadTotal));
             }
@@ -114,11 +116,11 @@ public class PostreConectActivity extends AppCompatActivity {
         Toast.makeText(this, "Se agrego un producto a tu pedido", LENGTH_SHORT).show();
         // Create a new user with a first, middle, and last name
         Map<String, Object> Pedido = new HashMap<>();
-        Pedido.put("id", postre.getId());
-        Pedido.put("nombre", postre.getNombre());
+        Pedido.put("id", yogurt.getId());
+        Pedido.put("nombre", yogurt.getNombre());
         Pedido.put("precioTotal", cantidadTotal);
         Pedido.put("cantidad", Integer.parseInt(num));
-        Pedido.put("imagen", postre.getImagen());
+        Pedido.put("imagen", yogurt.getImagen());
 
         // Add a new document with a generated ID
         db.collection("pedidos")

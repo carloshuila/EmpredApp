@@ -19,17 +19,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
-import edu.aplimovil.emprendapp.postres.Postre;
+import edu.aplimovil.emprendapp.postres.Yogurt;
 import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
 public class AdapterRecomendado extends RecyclerView.Adapter<AdapterRecomendado.MyViewHolder> {
 
         private Context micontext;
-        private List<Postre> listapostres;
+        private List<Yogurt> listapostres;
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
-        public AdapterRecomendado(Context micontext, List<Postre> listaPostres) {
+        public AdapterRecomendado(Context micontext, List<Yogurt> listaPostres) {
             this.micontext = micontext;
             listapostres = listaPostres;
         }
@@ -49,7 +49,7 @@ public class AdapterRecomendado extends RecyclerView.Adapter<AdapterRecomendado.
             holder.nombrePostre.setText((listapostres.get(position).getNombre()));
             Glide.with(micontext).load(listapostres.get(position).getImagen()).into(holder.imgPostre);
 
-            final Postre postre = listapostres.get(position);
+            final Yogurt postre = listapostres.get(position);
 
             //Agregar click Listener
             holder.cardViewRecomendado.setOnClickListener(new View.OnClickListener() {

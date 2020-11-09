@@ -16,13 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.io.Serializable;
 import java.util.List;
 
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.menu.PedidosActivity;
-import edu.aplimovil.emprendapp.postres.Postre;
-import edu.aplimovil.emprendapp.postres.PostreConectActivity;
 
 
 public class AdapterPedido extends RecyclerView.Adapter<AdapterPedido.MyViewHolder> {

@@ -1,14 +1,14 @@
-package edu.aplimovil.emprendapp.postres;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
+package edu.aplimovil.emprendapp.yogurt;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -24,18 +24,19 @@ import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.menu.MainActivity;
 import edu.aplimovil.emprendapp.menu.PedidosActivity;
 import edu.aplimovil.emprendapp.menu.PerfilActivity;
+import edu.aplimovil.emprendapp.postres.Yogurt;
 
 import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
-public class PostreActivity extends AppCompatActivity {
+public class YogurtActivity extends AppCompatActivity {
 
-    List<Yogurt> listaPostres = new ArrayList<>();
+    List<edu.aplimovil.emprendapp.postres.Yogurt> listaYogurt = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_postres);
+        setContentView(R.layout.activity_list_yogurt);
 
 
         //Barra navegacion
@@ -63,17 +64,17 @@ public class PostreActivity extends AppCompatActivity {
         });
         //Fin barra navegacion
 
-        db.collection("postres")
+        db.collection("yogurts")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("Postres", document.getId() + " => " + document.getData());
-                                Yogurt postre = document.toObject(Yogurt.class);
-                                listaPostres.add(postre);
-                                EnviarListarRecyclerView(listaPostres);
+                                Log.d("Yogurts", document.getId() + " => " + document.getData());
+                                edu.aplimovil.emprendapp.postres.Yogurt yogurt = document.toObject(edu.aplimovil.emprendapp.postres.Yogurt.class);
+                                listaYogurt.add(yogurt);
+                                EnviarListarRecyclerView(listaYogurt);
                             }
                         } else {
                             Log.w("Erorrrrr", "Error getting documents.", task.getException());
@@ -82,9 +83,9 @@ public class PostreActivity extends AppCompatActivity {
                 });
 
     }
-    public void  EnviarListarRecyclerView( List<Yogurt> mispostres){
-        RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_postres);
-        AdapterPostres MyAdapter = new AdapterPostres(this,mispostres);
+    public void  EnviarListarRecyclerView( List<Yogurt> misyogurts){
+        RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_yogurt);
+        AdapterYogurt MyAdapter = new AdapterYogurt(this,misyogurts);
         myRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
         myRecyclerView.setAdapter(MyAdapter);
     }

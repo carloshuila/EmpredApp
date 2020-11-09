@@ -2,7 +2,6 @@ package edu.aplimovil.emprendapp.menu;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,8 +27,7 @@ import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.categorias.AdapterCategoria;
 import edu.aplimovil.emprendapp.categorias.AdapterRecomendado;
 import edu.aplimovil.emprendapp.categorias.Categoria;
-import edu.aplimovil.emprendapp.postres.AdapterPostres;
-import edu.aplimovil.emprendapp.postres.Postre;
+import edu.aplimovil.emprendapp.postres.Yogurt;
 import edu.aplimovil.emprendapp.postres.PostreActivity;
 
 import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
@@ -38,7 +36,7 @@ import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 public class MainActivity extends AppCompatActivity {
 
     public List<Categoria> listaCategorias = new ArrayList<>();
-    public List<Postre> listaRecomendados = new ArrayList<>();
+    public List<Yogurt> listaRecomendados = new ArrayList<>();
     public  FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("Postres", document.getId() + " => " + document.getData());
-                                Postre postre = document.toObject(Postre.class);
+                                Yogurt postre = document.toObject(Yogurt.class);
                                 listaRecomendados.add(postre);
                                 EnviarListarRecyclerViewRecomendados(listaRecomendados);
                             }
@@ -126,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         myRecyclerView.setAdapter(MyAdapter);
     }
 
-    public void  EnviarListarRecyclerViewRecomendados( List<Postre> misRecomendados){
+    public void  EnviarListarRecyclerViewRecomendados( List<Yogurt> misRecomendados){
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         RecyclerView myRecyclerView = (RecyclerView) findViewById(R.id.id_recyclerView_producto_recomendado);
         myRecyclerView.setLayoutManager(layoutManager);
