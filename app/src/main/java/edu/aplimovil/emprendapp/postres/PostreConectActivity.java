@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class PostreConectActivity extends AppCompatActivity {
     private Context micontext;
     private Button agregraCarrito;
     public ElegantNumberButton cantidad;
+    private ImageButton btnAtras;
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -58,6 +60,19 @@ public class PostreConectActivity extends AppCompatActivity {
         ivImagen = (ImageView) findViewById(R.id.id_imagen_postre_Act);
         tvTotal = (TextView) findViewById(R.id.id_total);
 
+
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
+
+        //Barra navegacion
         BottomNavigationView navBar = findViewById(btnBarraNav);
 
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

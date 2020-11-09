@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,12 +33,24 @@ public class PostreActivity extends AppCompatActivity {
 
     List<Yogurt> listaPostres = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ImageButton btnAtras;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_postres);
 
+
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
 
         //Barra navegacion
         BottomNavigationView navBar = findViewById(btnBarraNav);

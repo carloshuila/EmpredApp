@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -14,12 +16,25 @@ import edu.aplimovil.emprendapp.menu.*;
 import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
 public class MetodoPagoActivity extends AppCompatActivity {
+    private ImageButton btnAtras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metodo_pago);
 
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
+
+        //Barra navegacion
         BottomNavigationView navBar=findViewById(btnBarraNav);
 
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

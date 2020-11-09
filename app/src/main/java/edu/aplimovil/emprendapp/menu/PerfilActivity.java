@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,6 +30,7 @@ public class PerfilActivity extends AppCompatActivity  {
 
     public List<Usuario> listaUsuarios = new ArrayList<>();
     public  FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ImageButton btnAtras;
 
 
     @Override
@@ -54,6 +57,18 @@ public class PerfilActivity extends AppCompatActivity  {
                         }
                     }
                 });
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        }
+        );
+
+
         //Barra navegacion
         BottomNavigationView navBar = findViewById(R.id.btnBarraNav);
 
