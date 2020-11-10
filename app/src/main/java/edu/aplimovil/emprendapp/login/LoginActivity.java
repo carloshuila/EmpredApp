@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.menu.*;
+import edu.aplimovil.emprendapp.metodoPago.MetodoPagoActivity;
 import edu.aplimovil.emprendapp.usuario.RegistroUserActivity;
 
 import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
@@ -124,9 +125,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
                             Toast.makeText(LoginActivity.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
-                           // Intent intencion = new Intent(getApplication(), WellcomeActivity.class);
+                            metodoPagoActivity();
+
+                            // Intent intencion = new Intent(getApplication(), WellcomeActivity.class);
                             //intencion.putExtra(WellcomeActivity.user, user);
                           //  startActivity(intencion);
+
+
 
 
                         } else {
@@ -152,6 +157,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public void registroUserActivity(View view) {
         Intent intent = new Intent(this, RegistroUserActivity.class);
+        startActivity(intent);
+    }
+
+    public  void metodoPagoActivity(){
+        Intent intent = new Intent(this, MetodoPagoActivity.class);
         startActivity(intent);
     }
 }

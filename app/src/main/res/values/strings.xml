@@ -26,6 +26,14 @@
     <string name="registro_user">Registro usuario</string>
     <string name="title_activity_maps">Map</string>
     <string name="registrar_user">Registrar</string>
+    <string name="nombre_tarjeta_credito">Nombre en la tarjeta</string>
+    <string name="numero_tarjeta_credito">Numero de la tarjeta</string>
+    <string name="mes_tarjeta_credito">MM</string>
+    <string name="anio_tarjeta_credito">YYYY</string>
+    <string name="cvv_tarjeta_credito">CVV</string>
+    <string name="pagar_tarjeta_credito">PAGAR</string>
+
+
 
 
 

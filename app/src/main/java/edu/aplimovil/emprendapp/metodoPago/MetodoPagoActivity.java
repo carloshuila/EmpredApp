@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.login.LoginActivity;
 import edu.aplimovil.emprendapp.menu.*;
+import edu.aplimovil.emprendapp.usuario.RegistroUserActivity;
+
 import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
 public class MetodoPagoActivity extends AppCompatActivity {
@@ -57,5 +61,11 @@ public class MetodoPagoActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void pagar(View view) {
+        Toast.makeText(this, "Pago realizado correctamente ", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

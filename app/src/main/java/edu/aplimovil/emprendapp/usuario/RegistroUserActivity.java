@@ -124,6 +124,7 @@ public class RegistroUserActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(RegistroUserActivity.this,"Se ha registrado el usuario con el email: "+ textCorreo.getText(),Toast.LENGTH_LONG).show();
                             registrarUser();
+                            iniciarSesionActivity();
                         }else{
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
                                 Toast.makeText(RegistroUserActivity.this, "Ese Correo  ya existe ", Toast.LENGTH_SHORT).show();
@@ -206,5 +207,10 @@ public class RegistroUserActivity extends AppCompatActivity {
             Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
             return;
         }
+    }
+
+    public  void iniciarSesionActivity(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
