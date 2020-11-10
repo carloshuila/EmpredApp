@@ -4,18 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
@@ -27,6 +31,11 @@ import java.util.Map;
 
 import edu.aplimovil.emprendapp.R;
 import edu.aplimovil.emprendapp.login.LoginActivity;
+import edu.aplimovil.emprendapp.menu.MainActivity;
+import edu.aplimovil.emprendapp.menu.PedidosActivity;
+import edu.aplimovil.emprendapp.menu.PerfilActivity;
+
+import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
 public class RegistroUserActivity extends AppCompatActivity {
 
@@ -38,6 +47,7 @@ public class RegistroUserActivity extends AppCompatActivity {
     public  EditText textCiudad;
     public  Button btnRegistrar;
     public  ProgressDialog progressDialog;
+    private ImageButton btnAtras;
 
     // Access a Cloud Firestore instance from your Activity
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -49,6 +59,41 @@ public class RegistroUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_user);
+
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
+
+        //Barra navegacion
+        BottomNavigationView navBar = findViewById(btnBarraNav);
+
+        navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.MainActivity:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.PedidosActivity:
+                        startActivity(new Intent(getApplicationContext(), PedidosActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.PerfilActivity:
+                        startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();

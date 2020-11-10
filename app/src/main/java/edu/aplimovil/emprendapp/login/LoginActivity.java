@@ -7,19 +7,25 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.menu.*;
 import edu.aplimovil.emprendapp.usuario.RegistroUserActivity;
+
+import static edu.aplimovil.emprendapp.R.id.btnBarraNav;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     //defining view objects
@@ -27,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText TextPassword;
     private Button btnLogin;
     private ProgressDialog progressDialog;
+    private ImageButton btnAtras;
 
     //Declaramos un objeto firebaseAuth
     private FirebaseAuth firebaseAuth;
@@ -35,6 +42,42 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
+
+        //Barra navegacion
+        BottomNavigationView navBar = findViewById(btnBarraNav);
+
+        navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.MainActivity:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.PedidosActivity:
+                        startActivity(new Intent(getApplicationContext(), PedidosActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.PerfilActivity:
+                        startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
 
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
