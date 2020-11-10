@@ -1,4 +1,4 @@
-package edu.aplimovil.emprendapp.pago;
+package edu.aplimovil.emprendapp.metodoPago;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

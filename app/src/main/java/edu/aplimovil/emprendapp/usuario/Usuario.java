@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class Usuario  implements Serializable {
 
-    private int id;
     private String nombre;
     private String apellido;
     private String direccion;
@@ -16,8 +15,7 @@ public class Usuario  implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String apellido, String direccion, String ciudad, String email, String pass, String foto) {
-        this.id = id;
+    public Usuario(String nombre, String apellido, String direccion, String ciudad, String email, String pass, String foto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
@@ -27,9 +25,6 @@ public class Usuario  implements Serializable {
         this.foto = foto;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -59,9 +54,6 @@ public class Usuario  implements Serializable {
         return foto;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;

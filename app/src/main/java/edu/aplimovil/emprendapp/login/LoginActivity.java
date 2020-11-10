@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import edu.aplimovil.emprendapp.R;
+import edu.aplimovil.emprendapp.usuario.RegistroUserActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     //defining view objects
@@ -106,4 +107,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
+    public void registroUserActivity(View view) {
+        Intent intent = new Intent(this, RegistroUserActivity.class);
+        startActivity(intent);
+    }
 }
