@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,12 +34,23 @@ public class YogurtActivity extends AppCompatActivity {
 
     List<edu.aplimovil.emprendapp.postres.Yogurt> listaYogurt = new ArrayList<>();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ImageButton btnAtras;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_yogurt);
 
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
 
         //Barra navegacion
         BottomNavigationView navBar = findViewById(btnBarraNav);

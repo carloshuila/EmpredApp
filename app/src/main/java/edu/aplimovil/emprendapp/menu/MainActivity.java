@@ -19,6 +19,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import android.view.View;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public List<Categoria> listaCategorias = new ArrayList<>();
     public List<Yogurt> listaRecomendados = new ArrayList<>();
     public  FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private ImageButton btnAtras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +84,18 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        //Barra superior
+        //boton atras
+        btnAtras = (ImageButton) findViewById(R.id.btnAtras);
+        btnAtras.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            onBackPressed();
+                                        }
+                                    }
+        );
 
-
-
-
+        //Barra navegacion
         BottomNavigationView navBar = findViewById(btnBarraNav);
 
         navBar.setSelectedItemId(R.id.MainActivity);

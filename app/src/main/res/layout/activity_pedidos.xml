@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlanco"
     tools:context=".menu.PedidosActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +23,7 @@
             android:layout_marginStart="10dp"
 
             android:layout_marginTop="4dp"
+            android:background="@color/colorBlanco"
             app:layout_constraintEnd_toStartOf="@+id/btnCesta"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,14 +70,12 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="410dp"
-        android:layout_height="604dp"
-        app:layout_constraintBottom_toTopOf="@+id/contLayouyBarraNav"
+        android:id="@+id/constraintLayout3"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/contLayoutSuperior">
 
         <TextView
             android:id="@+id/textView6"
@@ -85,14 +85,14 @@
             android:textColor="@color/colorNegro"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintHorizontal_bias="0.052"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/contLayoutPedidos"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6">
@@ -100,73 +100,73 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/id_recyclerView_pedidos"
                 android:layout_width="match_parent"
-                android:layout_height="310dp"
+                android:layout_height="match_parent"
                 android:orientation="horizontal" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contLayoutTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/contLayoutBton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:gravity="center"
-            android:padding="10dp"
+            android:text="Total:"
+            android:textColor="@color/colorNegro"
+            android:textSize="20dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-            app:layout_constraintVertical_bias="0.01999998">
+            app:layout_constraintTop_toTopOf="parent"></TextView>
 
-
-            <Button
-                android:id="@+id/id_btn_pagar"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:background="@color/colorPrimary"
-                android:gravity="center"
-                android:onClick="Pagar"
-                android:text="@string/btn_pagar"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/totalPagar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:text=" "
+            android:textColor="@color/colorNegro"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contLayoutBton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/contLayouyBarraNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/id_btn_pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:onClick="Pagar"
+            android:text="@string/btn_pagar"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/contLayoutPedidos">
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="115dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="4dp"
-                android:paddingStart="30dp"
-                android:text="Total:"
-                android:textColor="@color/colorNegro"
-                android:textSize="20dp"
-                android:textStyle="bold"></TextView>
-
-            <TextView
-                android:id="@+id/totalPagar"
-                android:layout_width="115dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="200dp"
-                android:paddingStart="30dp"
-                android:text=" "
-                android:textColor="@color/colorNegro"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
